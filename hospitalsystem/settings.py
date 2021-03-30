@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'doctor',
+    'hospital',
+    'patient',
+    'user',
 ]
+
+AUTH_USER_MODEL='user.CustomUser' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,6 +106,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.your-host.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "user@your-host.com"
+EMAIL_HOST_PASSWORD = "your-password"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
